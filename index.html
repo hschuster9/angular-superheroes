@@ -8,7 +8,7 @@
 </head>
 <body ng-controller='superheroesCtrl as vm'>
   <h2>Superheroes</h2>
-    <label> Search: <input type="text" ng-model="search.names" placeholder="superhero"></label>
+    <label> Search: <input type="text" ng-model="search.names" placeholder="superhero"></label><br><br>
     <div ng-repeat="superhero in vm.superheroes | filter: search.names" ng-class="{'marvel': superhero.comics_affiliation === 'Marvel', 'dc' : superhero.comics_affiliation == 'DC'}">
       <p> {{$index + 1}}. {{superhero.name}} <br> {{superhero.phone_number}} <br> {{superhero.comics_affiliation}}</p>
          <button ng-click="viewImage = !viewImage"> Click </button>

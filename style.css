@@ -15,11 +15,15 @@ div {
   height: 40%;
   width: 50%;
   color: white;
+  padding-top: 5px;
+  padding-left: 10px;
+  border: 1px solid black;
 
 
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+
 
 }
