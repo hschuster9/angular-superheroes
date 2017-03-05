@@ -4,20 +4,38 @@
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
 </head>
+
 <body ng-controller='superheroesCtrl as vm'>
+
   <h2>Superheroes</h2>
     <label> Search: <input type="text" ng-model="search.names" placeholder="superhero"></label><br><br>
+
+    <div class="newsuperhero">
+      Name <input type="text" ng-model="vm.newName" size='15X20'>
+      Phone Number <input type="text" ng-model="vm.newPhonenumber" size='15X20'>
+      <br>
+      Comics Affiliation <input type="text" ng-model="vm.newComics" size='15X20'>
+      Image <input type="text" ng-model="vm.newImage" size='15X20'>
+      <br>
+      <br>
+      <button ng-click="vm.addSuperhero()" class='addsuperherobutton'> Add Superhero </button>
+    </div>
+
+
     <div ng-repeat="superhero in vm.superheroes | filter: search.names" ng-class="{'marvel': superhero.comics_affiliation === 'Marvel', 'dc' : superhero.comics_affiliation == 'DC'}">
       <p> {{$index + 1}}. {{superhero.name}} <br> {{superhero.phone_number}} <br> {{superhero.comics_affiliation}}</p>
-         <button ng-click="viewImage = !viewImage"> Click </button>
+         <button ng-click="viewImage[$index] = !viewImage[$index]"> Click </button>
 
-        <p><img ng-show="viewImage" src="{{superhero.image_url}}"/></p>
+        <p><img ng-show="viewImage[$index]" src="{{superhero.image_url}}"/></p>
 
     </div>
+
 
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>

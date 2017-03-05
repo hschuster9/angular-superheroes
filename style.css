@@ -23,7 +23,21 @@ div {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
 
 
+}
+
+.newsuperhero {
+  color: black;
+  height: 60%;
+  width: 50%;
+  padding-top: 20px;
+  padding: 10px;
+padding-bottom: 15px;
+border: white;
+}
+
+.addsuperherobutton {
+  margin-left: 30%;
 }

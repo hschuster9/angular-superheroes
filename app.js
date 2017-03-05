@@ -18,4 +18,10 @@ angular
 
 function superheroesController (){
     this.superheroes = superheroesData;
+
+    this.addSuperhero = function() {
+      let superhero = {name: this.newName, phone_number: this.newPhonenumber, comics_affiliation: this.newComics, image_url: this.newImage}
+      this.superheroes.push(superhero)
+
+    };
 }
