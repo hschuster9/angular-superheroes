@@ -26,7 +26,7 @@
 
 
     <div ng-repeat="superhero in vm.superheroes | filter: search.names" ng-class="{'marvel': superhero.comics_affiliation === 'Marvel', 'dc' : superhero.comics_affiliation == 'DC'}">
-      <p> {{$index + 1}}. {{superhero.name}} <br> {{superhero.phone_number}} <br> {{superhero.comics_affiliation}}</p>
+      <p> {{$index + 1}}. {{superhero.name | uppercase}} <br> {{superhero.phone_number}} <br> {{superhero.comics_affiliation}}</p>
          <button ng-click="viewImage[$index] = !viewImage[$index]"> Click </button>
 
         <p><img ng-show="viewImage[$index]" src="{{superhero.image_url}}"/></p>
